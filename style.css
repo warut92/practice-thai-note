@@ -1,3 +1,10 @@
+@import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/Anuphan/Anuphan.css');
+body, button {
+  font-family: 'Anuphan', sans-serif;
+}
+
+
+
 table, td, tr {
   position: relative;
   max-width: 600px;
