@@ -41,11 +41,13 @@
       <br>
       <a href="./index.html">2 ช่อง</a>
       <br>
-      <a href="./4bars.html">4 ช่อง</a>
+      <a href="./4bars.html">4 ช่อง แบบที่ 1</a>
       <br>
-      <a href="./8bars.html">8 ช่อง</a>
+      <a href="./4bars1.html">4 ช่อง แบบที่ 2</a>
       <br>
-      <a href="./8bars1.html">8 ช่อง แบบที่ 1</a>
+      <a href="./8bars.html">8 ช่อง แบบที่ 1</a>
+      <br>
+      <a href="./8bars1.html">8 ช่อง แบบที่ 2</a>
   </body>
   <!-- partial -->
   <script>
@@ -69,6 +71,12 @@
       const index8 = Math.floor(Math.random() * 5);
       document.getElementById("bar8").innerHTML = emoji[index8];
     }
+
+    // I learnt from https://output.jsbin.com/efuhud/1
+    if (window.orientation != 90) {
+      alert("กรุณาปรับหน้าจอเป็นแนวนอน")
+    }
+
   </script>
 
 </body>
