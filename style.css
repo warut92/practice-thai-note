@@ -1,9 +1,13 @@
 @import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/Anuphan/Anuphan.css');
-body, button {
+@import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/K2D/K2D.css');
+
+body {
   font-family: 'Anuphan', sans-serif;
 }
 
-
+a, button  {
+  font-family:  'K2D', sans-serif;
+}
 
 table, td, tr {
   position: relative;
