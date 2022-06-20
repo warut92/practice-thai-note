@@ -47,6 +47,10 @@
   </body>
   <!-- partial -->
   <script>
+    for (var i = 0; i < 5; i++) {
+      getRandomEmoji(i);
+    }
+
     function getRandomEmoji() {
       const emoji = ['--🍊','--🍌','--🐻','--🐶','--🐱','---','🍊-🍊','🍊-🍌','🍊-🐻','🍊-🐶','🍌-🍊','🍌-🍌','🍌-🐻','🍌-🐶']
       const index1 = Math.floor(Math.random() * 13);
