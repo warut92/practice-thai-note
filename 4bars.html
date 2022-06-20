@@ -32,7 +32,8 @@
         </thead>
       </table>
       <br>
-      <button onclick="getRandomEmoji();">เปลี่ยน!</button>
+      <button onclick="start();">เริ่มสุ่ม</button>
+      <button onclick="stop();">หยุด</button>
       <br>
       <br>
       <!-- <a href="./index.html">2 ช่อง</a>
@@ -47,17 +48,28 @@
   </body>
   <!-- partial -->
   <script>
+      var interval = 0;
+
+      function start() {
+      interval = setInterval(getRandomEmoji, 50);
+      }
+
+      function stop() {
+      clearInterval(interval);
+      }
+
     function getRandomEmoji() {
-      const emoji = ['🍊', '🍌','🐻','🐃','🙈','-']
+      const emoji = ['🍊','🍌','🐻','🐃','🙈','-']
       const index1 = Math.floor(Math.random() * 6);
       document.getElementById("bar1").innerHTML = emoji[index1];
       const index2 = Math.floor(Math.random() * 6);
       document.getElementById("bar2").innerHTML = emoji[index2];
       const index3 = Math.floor(Math.random() * 6);
       document.getElementById("bar3").innerHTML = emoji[index3];
-      const index4 = Math.floor(Math.random() * 5);
+      const index4 = Math.floor(Math.random() * 6);
       document.getElementById("bar4").innerHTML = emoji[index4];
     }
+
   </script>
 
 </body>
