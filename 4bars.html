@@ -32,8 +32,7 @@
         </thead>
       </table>
       <br>
-      <button onclick="start();">เริ่มสุ่ม</button>
-      <button onclick="stop();">หยุด</button>
+      <button id="btn" onclick="changeText();">เริ่มสุ่ม</button>
       <br>
       <br>
       <!-- <a href="./index.html">2 ช่อง</a>
@@ -48,7 +47,18 @@
   </body>
   <!-- partial -->
   <script>
-      var interval = 0;
+    function changeText() {
+        if (document.getElementById("btn").textContent == "หยุด") {
+          document.getElementById("btn").textContent = "เริ่มสุ่ม";
+          stop();
+        } else {
+          document.getElementById("btn").textContent = "หยุด";
+          start();
+        }
+    }
+
+
+    var interval = 0;
 
     function start() {
       interval = setInterval(getRandomEmoji, 50);
