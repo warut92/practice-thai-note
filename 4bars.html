@@ -47,6 +47,7 @@
   </body>
   <!-- partial -->
   <script>
+    //change text in the button
     function changeText() {
         if (document.getElementById("btn").textContent == "หยุด") {
           document.getElementById("btn").textContent = "เริ่มสุ่ม";
@@ -57,17 +58,18 @@
         }
     }
 
-
     var interval = 0;
 
+    //start function
     function start() {
-      interval = setInterval(getRandomEmoji, 50);
+      interval = setInterval(getRandomEmoji, 10);
       }
-
+    //stop function
     function stop() {
       clearInterval(interval);
       }
 
+    //function for randon emojis in array
     function getRandomEmoji() {
       const emoji = ['🍊','🍌','🐻','😺','🙈','-']
       const index1 = Math.floor(Math.random() * 6);
