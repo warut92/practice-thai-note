@@ -5,6 +5,7 @@
   <title>ฝึกอ่านโน้ตดนตรีไทย</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <script src="https://rawgit.com/theraot/emoji/master/emoji.js" charset="utf-8"></script>
 </head>
 <body>
   <body>
@@ -23,6 +24,9 @@
       </table>
       <br>
       <button id="btn" onclick="changeText();">เริ่มสุ่ม</button>
+      <br>
+      <pre>ใส่อิโมจีเอง</pre>
+      <input id="custom_emoji" type="text" name="" value="">
       <br>
       <br>
       <!-- <a href="./index.html">2 ช่อง</a>
@@ -46,8 +50,6 @@
           start();
         }
     }
-    //setTimeout to run the function stop()
-    // const timeOut = setTimeout(stop, 3000)
 
     var interval = 0;
 
@@ -62,7 +64,10 @@
 
     //function for randon emojis in array
     function getRandomEmoji() {
-      const emoji = ['🍊','🍌','🐻','😺','🙈','-']
+      let custom_emoji = document.getElementById('custom_emoji').innerText;
+      let emoji = custom_emoji.split('')
+      // convert emoji to unicode//
+      // const emoji = ['🍊','🍌','🐻','😺','🙈','-']
       const index1 = Math.floor(Math.random() * 6);
       document.getElementById("bar1").innerHTML = emoji[index1];
       const index2 = Math.floor(Math.random() * 6);
