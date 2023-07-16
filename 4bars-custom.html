@@ -11,73 +11,81 @@
   <body>
     <center>
       <h3>ฝึกอ่านโน้ตดนตรีไทย</h3>
+      <h5>สร้างสรรค์รูปแบบโน้ตดนตรีไทยด้วยตนเอง</h5>
       <table style="width:300px;table-layout:fixed">
         <thead style="text-align:center">
           <tr>
-            <td>---<span id="bar1">-</span></td>
-            <td>---<span id="bar2">-</span></td>
-            <td>---<span id="bar3">-</span></td>
-            <td>---<span id="bar4">-</span></td>
-            </td>
+            <td id="cell1" onclick="getCellPositon(1)"><span id="bar1">----</span></td>
+            <td id="cell2" onclick="getCellPositon(2)"><span id="bar2">----</span></td>
+            <td id="cell3" onclick="getCellPositon(3)"><span id="bar3">----</span></td>
+            <td id="cell4" onclick="getCellPositon(4)"><span id="bar4">----</span></td>
+          </tr>
+          <tr>
+            <td id="cell5" onclick="getCellPositon(5)"><span id="bar5">----</span></td>
+            <td id="cell6" onclick="getCellPositon(6)"><span id="bar6">----</span></td>
+            <td id="cell7" onclick="getCellPositon(7)"><span id="bar7">----</span></td>
+            <td id="cell8" onclick="getCellPositon(8)"><span id="bar8">----</span></td>
           </tr>
         </thead>
       </table>
+      <hr>
+      <span id="cellNameText">กดเลือกห้องเพื่อทำการแก้ไข</span>
       <br>
-      <button id="btn" onclick="changeText();">เริ่มสุ่ม</button>
-      <br>
-      <pre>ใส่อิโมจีเอง</pre>
-      <input id="custom_emoji" type="text" name="" value="">
-      <br>
-      <br>
-      <!-- <a href="./index.html">2 ช่อง</a>
-      <br>
-      <a href="./4bars.html">4 ช่อง แบบที่ 1</a>
-      <br>
-      <a href="./4bars1.html">4 ช่อง แบบที่ 2</a>
-      <br>
-      <a href="./8bars.html">8 ช่อง แบบที่ 1</a>
-      <br>
-      <a href="./8bars1.html">8 ช่อง แบบที่ 2</a> -->
+      <button onclick="selectEmoji(this)">-</button>
+      <button onclick="selectEmoji(this)">🍊</button>
+      <button onclick="selectEmoji(this)">🍌</button>
+      <button onclick="selectEmoji(this)">🐻</button>
+      <button onclick="selectEmoji(this)">😺</button>
+      <button onclick="selectEmoji(this)">🙈</button>
+      <button onclick="selectEmoji(this)">🐶</button>
+      <button onclick="selectEmoji(this)">🐹</button>
+      <button onclick="selectEmoji(this)">🐸</button>
+      <button onclick="selectEmoji(this)">🐷</button>
+      <button onclick="selectEmoji(this)">🦆</button>
+      <button onclick="selectEmoji(this)">🐍</button>
+      <button onclick="selectEmoji(this)">🐴</button>
+      <button onclick="selectEmoji(this)">🐘</button>
+      <button onclick="selectEmoji(this)">🐓</button>
+      <button onclick="selectEmoji(this)">🐼</button>
+        <br>
+        <hr>
+        <button onclick="deleteEmoji()">ลบ</button>
+        <button onclick="deleteAllEmoji()">ลบทั้งห้อง</button>
+        <button onclick="window.location.reload()">รีเซต</button>
   </body>
   <script>
-    //change text in the button
-    function changeText() {
-        if (document.getElementById("btn").textContent == "หยุด") {
-          document.getElementById("btn").textContent = "เริ่มสุ่ม";
-          stop();
-        } else {
-          document.getElementById("btn").textContent = "หยุด";
-          start();
-        }
+
+  function getCellPositon(cellNum) {
+      document.getElementById('cellNameText').innerHTML = "<h>ห้องที่ " + cellNum + "<br>กรุณาเลือกรูปแบบของโน้ต</h>";
+      let cellBgColor = document.getElementById(`bar${cellNum}`)
     }
 
-    var interval = 0;
-
-    //start function
-    function start() {
-      interval = setInterval(getRandomEmoji, 10);
+    function selectEmoji(emoji) {
+      try {
+        let cellPositon = document.getElementById('cellNameText').innerHTML
+        cellPositon = cellPositon.split('');
+        let cellPositonNum = cellPositon[11]
+        document.getElementById(`bar${cellPositonNum}`).innerHTML += emoji.innerHTML;
+      } catch (e) {
+        alert("นักเรียนยังไม่ได้กดเลือกห้อง กรุณากดเลือกห้องเพื่อทำการแก้ไข ก่อนนะครับ")
       }
-    //stop function
-    function stop() {
-      clearInterval(interval);
-      }
-
-    //function for randon emojis in array
-    function getRandomEmoji() {
-      let custom_emoji = document.getElementById('custom_emoji').innerText;
-      let emoji = custom_emoji.split('')
-      // convert emoji to unicode//
-      // const emoji = ['🍊','🍌','🐻','😺','🙈','-']
-      const index1 = Math.floor(Math.random() * 6);
-      document.getElementById("bar1").innerHTML = emoji[index1];
-      const index2 = Math.floor(Math.random() * 6);
-      document.getElementById("bar2").innerHTML = emoji[index2];
-      const index3 = Math.floor(Math.random() * 6);
-      document.getElementById("bar3").innerHTML = emoji[index3];
-      const index4 = Math.floor(Math.random() * 6);
-      document.getElementById("bar4").innerHTML = emoji[index4];
     }
 
+    function deleteEmoji() {
+      let cellPositon = document.getElementById('cellNameText').innerHTML
+      cellPositon = cellPositon.split('');
+      let cellPositonNum = cellPositon[11]
+      let noteInCurrentBar = document.getElementById(`bar${cellPositonNum}`).innerText
+      let deletedNoteInCurrentBar = noteInCurrentBar.slice(0, noteInCurrentBar.length - 1)
+      document.getElementById(`bar${cellPositonNum}`).innerText = deletedNoteInCurrentBar
+    }
+
+    function deleteAllEmoji() {
+      let cellPositon = document.getElementById('cellNameText').innerHTML
+      cellPositon = cellPositon.split('');
+      let cellPositonNum = cellPositon[11]
+      document.getElementById(`bar${cellPositonNum}`).innerText = ""
+    }
   </script>
 </body>
 </html>
