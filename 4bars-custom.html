@@ -52,12 +52,43 @@
         <button onclick="deleteEmoji()">ลบ</button>
         <button onclick="deleteAllEmoji()">ลบทั้งห้อง</button>
         <button onclick="window.location.reload()">รีเซต</button>
+        <br>
+        <p id="cellsList"></p>
   </body>
   <script>
 
   function getCellPositon(cellNum) {
       document.getElementById('cellNameText').innerHTML = "<h>ห้องที่ " + cellNum + "<br>กรุณาเลือกรูปแบบของโน้ต</h>";
+
+      //หาตำแหน่งของห้อง และนำมาเก็บไว้
+      let cellPositon = document.getElementById('cellNameText').innerHTML
+      cellPositon = cellPositon.split('');
+      let cellPositonNum = cellPositon[11]
+      document.getElementById('cellsList').innerHTML += cellPositonNum;
+
+      //ดึงข้อมูลจาก tag p และนำมาแปลงเป็น array
+      let cellsList = document.getElementById('cellsList').innerHTML;
+      let cellsListArr = cellsList.split('')
+      console.log('CELLSLISTARR', cellsListArr)
+
+      //หาค่า length ของ array
+      let cellsListArrLen = cellsListArr.length
+      console.log('CELLSLISTARRLEN base on 1', cellsListArrLen)
+      //และดูค่าของ length ตัวรองสุดท้าย
+      let whiteCell = cellsListArr[cellsListArrLen - 2]
+      console.log('WHITECELL base on 0', whiteCell)
+
+
       let cellBgColor = document.getElementById(`bar${cellNum}`)
+      cellBgColor.style.backgroundColor = "red"
+      console.log('CELLBGCOLOR', cellBgColor)
+
+      if (cellsListArrLen > 1) {
+        console.log("cell more than 1");
+        let whiteCellBgColor = document.getElementById(`bar${Number(whiteCell)}`)
+        whiteCellBgColor.style.backgroundColor = "white"
+        console.log('WHITECELLBGCOLOR', whiteCellBgColor)
+      }
     }
 
     function selectEmoji(emoji) {

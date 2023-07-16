@@ -1,7 +1,7 @@
 @import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/Anuphan/Anuphan.css');
 @import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/K2D/K2D.css');
 
-body {
+body, h4 {
   font-family: 'K2D', sans-serif;
 }
 
