@@ -10,16 +10,29 @@ h3 {
   font-size: 25px;
 }
 
-a, button  {
-  font-family:  'K2D', sans-serif;
+a, button {
+  font-family: 'K2D', sans-serif;
 }
 
 table, td, tr {
-  font-size: 13px;
+  font-size: 16px;
   position: relative;
   max-width: 800px;
   margin: 10px;
   overflow: hidden;
   border: 1px solid black;
   /* border-collapse: collapse; */
+}
+
+button {
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

@@ -12,7 +12,7 @@
     <center>
       <h3>ฝึกอ่านโน้ตดนตรีไทย</h3>
       <h5>สร้างสรรค์รูปแบบโน้ตดนตรีไทยด้วยตนเอง</h5>
-      <table style="width:300px;table-layout:fixed">
+      <table style="width:400px;table-layout:fixed">
         <thead style="text-align:center">
           <tr>
             <td id="cell1" onclick="getCellPositon(1)"><span id="bar1">----</span></td>
@@ -53,12 +53,12 @@
         <button onclick="deleteAllEmoji()">ลบทั้งห้อง</button>
         <button onclick="window.location.reload()">รีเซต</button>
         <br>
-        <p id="cellsList"></p>
+        <p id="cellsList" style="display:none"></p>
   </body>
   <script>
 
   function getCellPositon(cellNum) {
-      document.getElementById('cellNameText').innerHTML = "<h>ห้องที่ " + cellNum + "<br>กรุณาเลือกรูปแบบของโน้ต</h>";
+      document.getElementById('cellNameText').innerHTML = "<h>ห้องที่ " + cellNum + "<br>ให้นักเรียนเลือกตัวโน้ตตามความคิดสร้างสรรค์ของนักเรียน</h>";
 
       //หาตำแหน่งของห้อง และนำมาเก็บไว้
       let cellPositon = document.getElementById('cellNameText').innerHTML
