@@ -64,6 +64,10 @@
 
     function start() {
       interval = setInterval(getRandomEmoji, 10);
+      setTimeout(() => {
+        stop()
+        changeText()
+      },1000)
       }
 
     function stop() {
@@ -75,11 +79,11 @@
 
       const index1 = Math.floor(Math.random() * 9);
       document.getElementById("bar1").innerHTML = emoji[index1];
-      const index2 = Math.floor(Math.random() * 8);
+      const index2 = Math.floor(Math.random() * 5);
       document.getElementById("bar2").innerHTML = emoji[index2];
       const index3 = Math.floor(Math.random() * 9);
       document.getElementById("bar3").innerHTML = emoji[index3];
-      const index4 = Math.floor(Math.random() * 9);
+      const index4 = Math.floor(Math.random() * 5);
       document.getElementById("bar4").innerHTML = emoji[index4];
 
       const index5 = Math.floor(Math.random() * 10);
@@ -100,7 +104,7 @@
       const index12 = Math.floor(Math.random() * 5);
       document.getElementById("bar12").innerHTML = emoji[index12];
       const index13 = Math.floor(Math.random() * 5);
-      
+
       // document.getElementById("bar13").innerHTML = emoji[index13];
       // const index14 = Math.floor(Math.random() * 4);
       // document.getElementById("bar14").innerHTML = emoji[index14];

@@ -54,6 +54,10 @@
     //start function
     function start() {
       interval = setInterval(getRandomEmoji, 10);
+      setTimeout(() => {
+        stop()
+        changeText()
+      },1000)
       }
     //stop function
     function stop() {

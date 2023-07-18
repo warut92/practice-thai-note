@@ -27,7 +27,7 @@ table, td, tr {
 button {
   background-color: #e7e7e7;
   color: black;
-  border: none;
+  border: 2px solid #f44336
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
