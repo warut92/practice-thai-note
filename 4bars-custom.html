@@ -15,16 +15,16 @@
       <table style="width:400px;table-layout:fixed">
         <thead style="text-align:center">
           <tr>
-            <td id="cell1" onclick="getCellPositon(1)"><span id="bar1">----</span></td>
-            <td id="cell2" onclick="getCellPositon(2)"><span id="bar2">----</span></td>
-            <td id="cell3" onclick="getCellPositon(3)"><span id="bar3">----</span></td>
-            <td id="cell4" onclick="getCellPositon(4)"><span id="bar4">----</span></td>
+            <td id="cell1" onclick="getCellPositon(1)" ondblclick="deleteAllEmoji()"><span id="bar1">----</span></td>
+            <td id="cell2" onclick="getCellPositon(2)" ondblclick="deleteAllEmoji()"><span id="bar2">----</span></td>
+            <td id="cell3" onclick="getCellPositon(3)" ondblclick="deleteAllEmoji()"><span id="bar3">----</span></td>
+            <td id="cell4" onclick="getCellPositon(4)" ondblclick="deleteAllEmoji()"><span id="bar4">----</span></td>
           </tr>
           <tr>
-            <td id="cell5" onclick="getCellPositon(5)"><span id="bar5">----</span></td>
-            <td id="cell6" onclick="getCellPositon(6)"><span id="bar6">----</span></td>
-            <td id="cell7" onclick="getCellPositon(7)"><span id="bar7">----</span></td>
-            <td id="cell8" onclick="getCellPositon(8)"><span id="bar8">----</span></td>
+            <td id="cell5" onclick="getCellPositon(5)" ondblclick="deleteAllEmoji()"><span id="bar5">----</span></td>
+            <td id="cell6" onclick="getCellPositon(6)" ondblclick="deleteAllEmoji()"><span id="bar6">----</span></td>
+            <td id="cell7" onclick="getCellPositon(7)" ondblclick="deleteAllEmoji()"><span id="bar7">----</span></td>
+            <td id="cell8" onclick="getCellPositon(8)" ondblclick="deleteAllEmoji()"><span id="bar8">----</span></td>
           </tr>
         </thead>
       </table>
@@ -54,6 +54,8 @@
         <button onclick="window.location.reload()">รีเซต</button>
         <br>
         <p id="cellsList" style="display:none"></p>
+        <br>
+        <a href="./index.html">หน้าหลัก</a>
   </body>
   <script>
 
@@ -69,25 +71,19 @@
       //ดึงข้อมูลจาก tag p และนำมาแปลงเป็น array
       let cellsList = document.getElementById('cellsList').innerHTML;
       let cellsListArr = cellsList.split('')
-      console.log('CELLSLISTARR', cellsListArr)
 
       //หาค่า length ของ array
       let cellsListArrLen = cellsListArr.length
-      console.log('CELLSLISTARRLEN base on 1', cellsListArrLen)
       //และดูค่าของ length ตัวรองสุดท้าย
       let whiteCell = cellsListArr[cellsListArrLen - 2]
-      console.log('WHITECELL base on 0', whiteCell)
 
 
-      let cellBgColor = document.getElementById(`bar${cellNum}`)
+      let cellBgColor = document.getElementById(`cell${cellNum}`)
       cellBgColor.style.backgroundColor = "Yellow"
-      console.log('CELLBGCOLOR', cellBgColor)
 
       if (cellsListArrLen > 1) {
-        console.log("cell more than 1");
-        let whiteCellBgColor = document.getElementById(`bar${Number(whiteCell)}`)
+        let whiteCellBgColor = document.getElementById(`cell${Number(whiteCell)}`)
         whiteCellBgColor.style.backgroundColor = "white"
-        console.log('WHITECELLBGCOLOR', whiteCellBgColor)
       }
     }
 
