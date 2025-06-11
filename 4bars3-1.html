@@ -12,6 +12,7 @@
     <center>
       <h3>ฝึกอ่านโน้ตดนตรีไทย แบบที่ 2</h3>
       <h>ให้นักเรียนอ่าน 2 แบบฝึก</h>
+      <h2>-x-x</h2>
       <table style="width:300px;table-layout:fixed">
         <thead style="text-align:center">
           <tr>
@@ -37,18 +38,6 @@
       <br>
       <button id="btn" onclick="changeText();">เริ่มสุ่ม</button>
       <br>
-      <br>
-      <br>
-      <a href="./index.html">หน้าหลัก</a>
-      <!-- <a href="./index.html">หน้าหลัก</a>
-      <br>
-      <a href="./4bars.html">4 ช่อง แบบที่ 1</a>
-      <br>
-      <a href="./4bars1.html">4 ช่อง แบบที่ 2</a>
-      <br>
-      <a href="./8bars.html">8 ช่อง แบบที่ 1</a>
-      <br>
-      <a href="./8bars1.html">8 ช่อง แบบที่ 2</a> -->
   </body>
   <script>
     function changeText() {
@@ -77,7 +66,8 @@
       }
 
     function getRandomEmoji() {
-      const emoji = ['🐶','🐱','🐻','🍊','🍌','🌶️','-','-','-','-']
+      const emoji = ['🐶','🐱','🐘','🍊','🍌','🌶️','-','-','-','-']
+      // const emoji = ['🐶','🐱','🐻','🐷','🍌','🦑','-','-','-','-']
       const index1 = Math.floor(Math.random() * 7);
       document.getElementById("bar1").innerHTML = emoji[index1];
       const index2 = Math.floor(Math.random() * 7);
@@ -114,6 +104,7 @@
     }
 
   </script>
+  <script src="nav.js"></script>
 
 </body>
 
